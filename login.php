@@ -19,7 +19,11 @@ try {
     $stmt->execute();
 
     if ( $linha = $stmt->fetch() ) {
-        //restante do código...
+        echo "Login bem-sucedido!";
+    } else {
+        echo "CPF ou senha incorretos.";
     }
+} catch (PDOException $e) {
+    echo "Erro ao executar consulta: " . $e->getMessage();
 }
 ?>
